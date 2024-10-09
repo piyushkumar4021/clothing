@@ -1,5 +1,11 @@
+import CategoryItemList from './components/CategoryItemList';
+
 function App() {
-  return <h1>Clothing</h1>;
+  return (
+    <>
+      <CategoryItemList />
+    </>
+  );
 }
 
 export default App;

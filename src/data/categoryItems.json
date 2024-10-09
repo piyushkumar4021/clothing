@@ -1,0 +1,7 @@
+[
+  { "label": "Hats", "size": "sm", "slug": "hats" },
+  { "label": "Jackets", "size": "sm", "slug": "jackets" },
+  { "label": "Sneakers", "size": "sm", "slug": "sneakers" },
+  { "label": "Mens", "size": "lg", "slug": "mens" },
+  { "label": "Womens", "size": "lg", "slug": "womens" }
+]
