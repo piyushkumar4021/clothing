@@ -1,11 +1,7 @@
-import CategoryItemList from './components/CategoryItemList';
+import Home from './page/Home';
 
 function App() {
-  return (
-    <>
-      <CategoryItemList />
-    </>
-  );
+  return <Home />;
 }
 
 export default App;
