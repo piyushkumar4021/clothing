@@ -5,7 +5,7 @@ const Shop = () => {
   console.log(SHOP_DATA);
 
   return (
-    <div className='container mx-auto'>
+    <div className='container mx-auto mb-7'>
       <h1 className='text-5xl font-semibold mt-8'>Collection</h1>
 
       {SHOP_DATA.map(({ id, ...delegated }) => (
