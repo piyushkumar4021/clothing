@@ -1,15 +1,13 @@
-import ShopItemPreview from '../components/ShopItemPreview';
+import ShopItemsPreview from '../components/ShopItemsPreview';
 import SHOP_DATA from '../data/shopData.json';
 
 const Shop = () => {
-  console.log(SHOP_DATA);
-
   return (
-    <div className='container mx-auto mb-7'>
+    <div className='container mx-auto mb-7 px-3'>
       <h1 className='text-5xl font-semibold mt-8'>Collection</h1>
 
       {SHOP_DATA.map(({ id, ...delegated }) => (
-        <ShopItemPreview key={id} {...delegated} />
+        <ShopItemsPreview key={id} {...delegated} />
       ))}
     </div>
   );
