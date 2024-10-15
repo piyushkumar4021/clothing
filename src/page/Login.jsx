@@ -1,4 +1,23 @@
+import { signInWithPopup } from 'firebase/auth';
+import { auth, googleProvider } from '../utils/firebase';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 const Login = () => {
+  const navigate = useNavigate();
+
+  const handleSignInWithGoogle = () => {
+    signInWithPopup(auth, googleProvider);
+  };
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) navigate('/');
+    });
+
+    return () => unsubscribe();
+  }, [navigate]);
+
   return (
     <div className='max-w-sm mx-auto py-3 px-4'>
       <h2 className='text-4xl mb-3'>Log in</h2>
@@ -46,6 +65,7 @@ const Login = () => {
           <button
             type='button'
             className='text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center'
+            onClick={handleSignInWithGoogle}
           >
             <svg
               className='w-4 h-4 me-2'

@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import logo from '../assets/logo.png';
 import { Link, NavLink } from 'react-router-dom';
+import { auth } from '../utils/firebase';
 
-const Header = () => {
+const Header = ({ currentUser }) => {
   const activeClass = 'font-medium text-blue-500';
 
   return (
@@ -10,7 +12,7 @@ const Header = () => {
         <img className='w-12 sm:w-16' src={logo} alt='Fashion Website Logo' />
       </Link>
 
-      <div className='text-lg tracking-wider text-neutral-800 flex gap-x-6'>
+      <div className='text-lg text-neutral-800 flex gap-x-6'>
         <NavLink
           to=''
           className={({ isActive }) => (isActive ? activeClass : '')}
@@ -23,12 +25,16 @@ const Header = () => {
         >
           Shop
         </NavLink>
-        <NavLink
-          to='login'
-          className={({ isActive }) => (isActive ? activeClass : '')}
-        >
-          Login
-        </NavLink>
+        {currentUser ? (
+          <button onClick={() => auth.signOut()}>Log out</button>
+        ) : (
+          <NavLink
+            to='login'
+            className={({ isActive }) => (isActive ? activeClass : '')}
+          >
+            Log in / Sign up
+          </NavLink>
+        )}
       </div>
     </div>
   );
