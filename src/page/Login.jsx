@@ -1,13 +1,14 @@
 import { signInWithPopup } from 'firebase/auth';
-import { auth, googleProvider } from '../utils/firebase';
+import { auth, createUserInDb, googleProvider } from '../utils/firebase';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const navigate = useNavigate();
 
-  const handleSignInWithGoogle = () => {
-    signInWithPopup(auth, googleProvider);
+  const handleSignInWithGoogle = async () => {
+    const userAuth = await signInWithPopup(auth, googleProvider);
+    createUserInDb(userAuth);
   };
 
   useEffect(() => {

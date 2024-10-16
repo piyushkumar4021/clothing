@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { getFirestore, doc, setDoc, getDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCEs62JBffocHxOEb5mi1YDOYSkeN7h6sI',
@@ -14,3 +15,27 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
+
+const db = getFirestore(app);
+
+export const createUserInDb = async (userAuth) => {
+  if (!userAuth) return;
+
+  const { uid, displayName, email } = userAuth.user;
+  const docRef = doc(db, 'users', uid);
+  const docSnap = await getDoc(docRef);
+
+  if (!docSnap.exists()) {
+    try {
+      const data = {
+        displayName,
+        email,
+        createdAt: new Date(),
+      };
+
+      setDoc(docRef, data);
+    } catch (error) {
+      console.log('Error : ' + error.message);
+    }
+  }
+};
