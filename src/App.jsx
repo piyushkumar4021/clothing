@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Login from './page/Login';
 import { auth, createUserInDb } from './utils/firebase';
 import { useEffect, useState } from 'react';
+import Signup from './page/Signup';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -27,6 +28,7 @@ function App() {
           <Route index Component={Home} />
           <Route path='shop' Component={Shop} />
           <Route path='login' Component={Login} />
+          <Route path='signup' Component={Signup} />
         </Route>
       </Routes>
     </>
