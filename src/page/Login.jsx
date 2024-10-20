@@ -1,10 +1,23 @@
-import { signInWithPopup } from 'firebase/auth';
+import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { auth, googleProvider } from '../utils/firebase';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
 const Login = () => {
   const navigate = useNavigate();
+  const logInFormRef = useRef(null);
+
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+
+    const { email, password } = logInFormRef.current;
+
+    try {
+      await signInWithEmailAndPassword(auth, email.value, password.value);
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
 
   const handleSignInWithGoogle = async () => {
     signInWithPopup(auth, googleProvider);
@@ -22,7 +35,7 @@ const Login = () => {
     <div className='max-w-sm mx-auto py-3'>
       <h2 className='text-4xl mb-3'>Log in</h2>
 
-      <form>
+      <form onSubmit={handleSignIn} ref={logInFormRef}>
         <div className='mb-5'>
           <label
             htmlFor='email'
