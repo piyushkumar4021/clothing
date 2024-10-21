@@ -2,8 +2,10 @@
 import logo from '../assets/logo.png';
 import { Link, NavLink } from 'react-router-dom';
 import { auth } from '../utils/firebase';
+import { useSelector } from 'react-redux';
 
-const Header = ({ currentUser }) => {
+const Header = () => {
+  const user = useSelector((state) => state.user);
   const activeClass = 'font-medium text-blue-500';
 
   return (
@@ -25,7 +27,7 @@ const Header = ({ currentUser }) => {
         >
           Shop
         </NavLink>
-        {currentUser ? (
+        {user ? (
           <button onClick={() => auth.signOut()}>Log out</button>
         ) : (
           <NavLink
