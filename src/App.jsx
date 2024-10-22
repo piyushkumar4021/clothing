@@ -22,10 +22,6 @@ function App() {
     return () => unsubscribe();
   }, [dispatch]);
 
-  fetch(
-    'https://console.firebase.google.com/u/0/project/clothing-33a62/storage/clothing-33a62.appspot.com/files'
-  ).then((resp) => console.log(resp));
-
   return (
     <>
       <Header />

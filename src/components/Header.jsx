@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
 import logo from '../assets/logo.png';
 import { Link, NavLink } from 'react-router-dom';
 import { auth } from '../utils/firebase';
 import { useSelector } from 'react-redux';
+import ShoppingCart from './ShoppingCart';
 
 const Header = () => {
   const user = useSelector((state) => state.user);
@@ -14,7 +14,7 @@ const Header = () => {
         <img className='w-12 sm:w-16' src={logo} alt='Fashion Website Logo' />
       </Link>
 
-      <div className='text-lg text-neutral-800 flex gap-x-6'>
+      <div className='text-lg text-neutral-800 flex gap-x-6 items-center'>
         <NavLink
           to=''
           className={({ isActive }) => (isActive ? activeClass : '')}
@@ -37,6 +37,8 @@ const Header = () => {
             Log in / Sign up
           </NavLink>
         )}
+
+        <ShoppingCart />
       </div>
     </div>
   );

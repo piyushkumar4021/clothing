@@ -3,30 +3,30 @@
     "label": "Hats",
     "size": "sm",
     "slug": "hats",
-    "imgUrl": "https://images.unsplash.com/photo-1516369033203-ba1a9f0e3b5c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    "imgUrl": "https://i.ibb.co/Jv3kWyp/hats.webp"
   },
   {
     "label": "Jackets",
     "size": "sm",
     "slug": "jackets",
-    "imgUrl": "https://images.unsplash.com/photo-1649433911119-7cf48b3e8f50?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    "imgUrl": "https://i.ibb.co/bJssGtQ/jackets.webp"
   },
   {
     "label": "Sneakers",
     "size": "sm",
     "slug": "sneakers",
-    "imgUrl": "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    "imgUrl": "https://i.ibb.co/xqdt94d/shoes.webp"
   },
   {
     "label": "Mens",
     "size": "lg",
     "slug": "mens",
-    "imgUrl": "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    "imgUrl": "https://i.ibb.co/2dpRVFq/men.webp"
   },
   {
     "label": "Womens",
     "size": "lg",
     "slug": "womens",
-    "imgUrl": "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    "imgUrl": "https://i.ibb.co/sPD5fWF/women.webp"
   }
 ]
